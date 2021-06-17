@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+}
+
+group = 'com.github.Shahondin1624'
+version = '0.9-SNAPSHOT'
+description = 'PropertiesManager'
+java.sourceCompatibility = JavaVersion.VERSION_15
+
+group 'com.github.Shahondin1624'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+sourceSets {
+    main.java.srcDir 'src/main'
+    test.java.srcDir 'src/test'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
